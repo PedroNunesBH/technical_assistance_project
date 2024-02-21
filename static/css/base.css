@@ -1,0 +1,23 @@
+body {
+    margin: 0;
+}
+
+h1 {
+    margin: 0px;
+    background-color: blue;
+    color: white;
+    text-align: center;
+    height: 50px;
+    padding: 20px;
+}
+
+#nav-bar {
+    margin: 0px;
+    background-color: grey;
+    display: flex;
+    list-style: none;
+    flex-direction: row;
+    gap: 20px;
+    padding: 10px;
+    height: 20px;
+}
