@@ -5,6 +5,7 @@ STATUS = [
     ("Em Andamento", "Em Andamento"),
     ("Aguardando Retirada", "Aguardando Retirada"),
     ("Em Orçamento", "Em Orçamento"),
+    ("Entregue", "Entregue ao Cliente")
 ]
 
 
