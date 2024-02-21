@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Listagem de Dispositivos</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Modelo</th>
+                <th>Nome do Cliente</th>
+                <th>Telefone do Cliente</th>
+                <th>Email do Cliente</th>
+                <th>Data de Entrada</th>
+                <th>Status</th>
+                <th>Técnico Responsável</th>
+                <th>Descrição do Problema</th>
+                <!-- Adicione mais colunas conforme necessário para os campos do seu modelo -->
+            </tr>
+        </thead>
+        <tbody>
+            {% for device in object_list %}
+                <tr>
+                    <td>{{ device.id }}</td>
+                    <td>{{ device.model}}</td>
+                    <td>{{ device.client_name}}</td>
+                    <td>{{ device.client_phone }}</td>
+                    <td>{{ device.client_email }}</td>
+                    <td>{{ device.entry_date }}</td>
+                    <td>{{ device.status }}</td>
+                    <td>{{ device.technician }}</td>
+                    <td>{{ device.problem_description }}</td>
+
+                    <!-- Adicione mais colunas conforme necessário para os campos do seu modelo -->
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

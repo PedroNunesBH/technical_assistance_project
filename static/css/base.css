@@ -21,3 +21,8 @@ h1 {
     padding: 10px;
     height: 20px;
 }
+
+a {
+    text-decoration: none;
+    color: black;
+}
