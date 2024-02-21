@@ -1,5 +1,5 @@
 from django.urls import reverse_lazy
-from django.views.generic import TemplateView, ListView, CreateView
+from django.views.generic import TemplateView, ListView, CreateView, UpdateView
 from .models import Devices
 from .forms import CreateDevicesForm
 
@@ -18,3 +18,9 @@ class CreateDevicesView(CreateView):
     model = Devices
     form_class = CreateDevicesForm
     success_url = reverse_lazy("list_devices")  # Caso sucesso no formulário redireciona para a url list_devices
+
+
+class UpdateDeviceView(UpdateView):
+    template_name = "update_device.html"
+    model = Devices
+    form_class = CreateDevicesForm
