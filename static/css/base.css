@@ -2,7 +2,7 @@ body {
     margin: 0;
 }
 
-h1 {
+.h1-base {
     margin: 0px;
     background-color: blue;
     color: white;

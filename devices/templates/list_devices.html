@@ -1,5 +1,12 @@
 {% extends 'base.html' %}
 
+{% load static %}
+
+{% block styles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/list_devices.css' %}">
+{% endblock %}
+
 {% block content %}
     <h2>Listagem de Dispositivos</h2>
     <table>
@@ -14,6 +21,7 @@
                 <th>Status</th>
                 <th>Técnico Responsável</th>
                 <th>Descrição do Problema</th>
+                <th>Ações</th>
                 <!-- Adicione mais colunas conforme necessário para os campos do seu modelo -->
             </tr>
         </thead>
@@ -29,6 +37,8 @@
                     <td>{{ device.status }}</td>
                     <td>{{ device.technician }}</td>
                     <td>{{ device.problem_description }}</td>
+                    <td><a href="{% url 'update_device' device.pk %}" class="edit-btn">Editar</a></td>
+                    <td><a href="{% url 'delete_device' device.pk %}" class="delete-btn">Deletar</a></td>
 
                     <!-- Adicione mais colunas conforme necessário para os campos do seu modelo -->
                 </tr>
