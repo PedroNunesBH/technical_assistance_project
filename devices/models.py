@@ -1,7 +1,9 @@
 from django.db import models
+from technicals.models import Technicals
 
 
 STATUS = [
+    ("Aguardando Aprovação", "Aguardando Aprovação"),
     ("Em Andamento", "Em Andamento"),
     ("Aguardando Retirada", "Aguardando Retirada"),
     ("Em Orçamento", "Em Orçamento"),
@@ -18,5 +20,5 @@ class Devices(models.Model):
         auto_now_add=True
     )  # Adiciona automaticamente data e hora de entrada do aparelho
     status = models.CharField(choices=STATUS, max_length=50)
-    technician = models.CharField(max_length=50)
+    technician = models.ForeignKey(Technicals, on_delete=models.PROTECT, related_name='devices_technicals')
     problem_description = models.TextField()

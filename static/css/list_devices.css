@@ -13,3 +13,11 @@
     border-radius: 3px;
     padding: 2px;
 }
+
+td {
+    background: lightblue;
+}
+
+th {
+    background: grey;
+}

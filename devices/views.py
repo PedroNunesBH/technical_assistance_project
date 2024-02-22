@@ -12,6 +12,12 @@ class ListDevicesView(ListView):
     template_name = "list_devices.html"
     model = Devices
 
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        search = self.request.GET.get('search', '')
+        queryset = queryset.filter(client_name__icontains=search)
+        return queryset
+
 
 class CreateDevicesView(CreateView):
     template_name = "create_devices.html"
@@ -24,6 +30,7 @@ class UpdateDeviceView(UpdateView):
     template_name = "update_device.html"
     model = Devices
     form_class = CreateDevicesForm
+    success_url = reverse_lazy('list_devices')
 
 
 class DeleteDeviceView(DeleteView):

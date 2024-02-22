@@ -7,3 +7,6 @@ class Technicals(models.Model):
     email = models.EmailField()
     admission_date = models.DateField()
     salary = models.FloatField()
+
+    def __str__(self):
+        return self.name
