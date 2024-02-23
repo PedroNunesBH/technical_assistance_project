@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block styles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/list_devices.css' %}">
+{% endblock %}
+
+{% block content %}
+    <h2>Listagem de Técnicos</h2>
+
+    <form method="get">
+        <input name="search" placeholder="Procure pelo nome do técnico...">
+    </form>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome do Técnico</th>
+                <th>CPF</th>
+                <th>Email</th>
+                <th>Data de Admissão</th>
+                <th>Salário</th>
+                <th>Número de Telefone</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for technical in object_list %}
+                <tr>
+                    <td>{{ technical.id }}</td>
+                    <td>{{ technical.name }}</td>
+                    <td>{{ technical.cpf }}</td>
+                    <td>{{ technical.email }}</td>
+                    <td>{{ technical.admission_date }}</td>
+                    <td>{{ technical.salary }}</td>
+                    <td>{{ technical.phone_number }}</td>
+                    <td><a href="" class="edit-btn">Editar</a></td>
+                    <td><a href="" class="delete-btn">Deletar</a></td>
+
+                    <!-- Adicione mais colunas conforme necessário para os campos do seu modelo -->
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
