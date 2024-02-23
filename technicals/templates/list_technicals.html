@@ -23,6 +23,7 @@
                 <th>Data de Admissão</th>
                 <th>Salário</th>
                 <th>Número de Telefone</th>
+                <th>Ações</th>
             </tr>
         </thead>
         <tbody>
@@ -35,7 +36,7 @@
                     <td>{{ technical.admission_date }}</td>
                     <td>{{ technical.salary }}</td>
                     <td>{{ technical.phone_number }}</td>
-                    <td><a href="" class="edit-btn">Editar</a></td>
+                    <td><a href="{% url 'update_technical' technical.pk %}" class="edit-btn">Editar</a></td>
                     <td><a href="" class="delete-btn">Deletar</a></td>
 
                     <!-- Adicione mais colunas conforme necessário para os campos do seu modelo -->
