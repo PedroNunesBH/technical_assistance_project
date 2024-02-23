@@ -37,7 +37,7 @@
                     <td>{{ technical.salary }}</td>
                     <td>{{ technical.phone_number }}</td>
                     <td><a href="{% url 'update_technical' technical.pk %}" class="edit-btn">Editar</a></td>
-                    <td><a href="" class="delete-btn">Deletar</a></td>
+                    <td><a href="{% url 'delete_technical' technical.pk %}" class="delete-btn">Deletar</a></td>
 
                     <!-- Adicione mais colunas conforme necessário para os campos do seu modelo -->
                 </tr>

@@ -1,4 +1,4 @@
-from django.views.generic import ListView, CreateView, UpdateView
+from django.views.generic import ListView, CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 from .models import Technicals
 from .forms import CreateTechnicalsForm
@@ -28,4 +28,10 @@ class UpdateTechnicalsView(UpdateView):
     template_name = "update_technical.html"
     model = Technicals
     form_class = CreateTechnicalsForm
+    success_url = reverse_lazy("list_technicals")
+
+
+class DeleteTechnicalsView(DeleteView):
+    template_name = "delete_technical.html"
+    model = Technicals
     success_url = reverse_lazy("list_technicals")
