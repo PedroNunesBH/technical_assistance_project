@@ -20,6 +20,11 @@
             <li><a href="{% url 'create_devices' %}">Inserir Aparelho</a></li>
             <li>Editar Aparelho</li>
         </ul>
+        <form method="post" action="{% url 'logout' %}">
+            {% csrf_token %}
+            <button type="submit">Logout</button>
+        </form>
+
     </nav>
 
     <main>

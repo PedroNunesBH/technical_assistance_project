@@ -9,6 +9,7 @@
 
 {% block content %}
     <h2>Listagem de Dispositivos</h2>
+    <p>Usuário : {{ request.user }}</p>
 
     <form method="get">
         <input name="search" placeholder="Procure pelo nome do cliente...">

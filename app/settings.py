@@ -130,4 +130,6 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 LOGIN_URL = "login"
 
-LOGIN_REDIRECT_URL = "list_devices"
+LOGIN_REDIRECT_URL = "list_devices"  # Pagina de redirecionamento após o login
+
+LOGOUT_REDIRECT_URL = "login"  # Pagina de redirecionamento após o logout
