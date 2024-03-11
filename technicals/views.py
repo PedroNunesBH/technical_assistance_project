@@ -1,10 +1,12 @@
-from django.views.generic import ListView, CreateView, UpdateView, DeleteView
+from django.views.generic import ListView, CreateView, UpdateView, DeleteView, TemplateView
 from django.urls import reverse_lazy
+from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import Technicals
 from .forms import CreateTechnicalsForm
+from .mixins import OnlyAdminMixin
 
 
-class ListTechnicalsView(ListView):
+class ListTechnicalsView(LoginRequiredMixin, OnlyAdminMixin, ListView):
     template_name = "list_technicals.html"
     model = Technicals
 
@@ -17,21 +19,25 @@ class ListTechnicalsView(ListView):
         return queryset
 
 
-class CreateTechnicalsView(CreateView):
+class CreateTechnicalsView(LoginRequiredMixin, OnlyAdminMixin, CreateView):
     template_name = "create_technicals.html"
     model = Technicals
     form_class = CreateTechnicalsForm
     success_url = reverse_lazy("list_technicals")
 
 
-class UpdateTechnicalsView(UpdateView):
+class UpdateTechnicalsView(LoginRequiredMixin, OnlyAdminMixin, UpdateView):
     template_name = "update_technical.html"
     model = Technicals
     form_class = CreateTechnicalsForm
     success_url = reverse_lazy("list_technicals")
 
 
-class DeleteTechnicalsView(DeleteView):
+class DeleteTechnicalsView(LoginRequiredMixin, OnlyAdminMixin, DeleteView):
     template_name = "delete_technical.html"
     model = Technicals
     success_url = reverse_lazy("list_technicals")
+
+
+class OnlyAdminErrorView(TemplateView):  # View que para exibir template de restrição de admin
+    template_name = "only_admin.html"
