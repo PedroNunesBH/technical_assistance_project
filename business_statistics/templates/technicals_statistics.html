@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <main>
+        <h1>Estatisticas dos Funcionários</h1>
+        <p>O número total de funcionários ativos é : {{ number_of_employees }}</p>
+        <p>A folha de pagamento somada é : R$ {{ total_wages }}</p>
+        <p>O número de aparelhos no momento na loja é : {{ active_devices }}</p>
+    </main>
+
+{% endblock %}

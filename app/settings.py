@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "devices",
     "technicals",
-    "bussiness_statistics"
+    "business_statistics"
 ]
 
 MIDDLEWARE = [
