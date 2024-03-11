@@ -1,9 +1,16 @@
 {% extends 'base.html' %}
 
+{% load static %}
+
+{% block styles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/create_technicals.css' %}">
+{% endblock %}
+
 {% block content %}
     <main>
-        <h1>Registrar um Técnico</h1>
-        <form method="post" action="">
+        <h1 class="form_ct_title">Registrar um Técnico</h1>
+        <form class="form_create_technicals" method="post" action="">
         {% csrf_token %}
             {{ form.as_p }}
             <button type="submit">Criar</button>

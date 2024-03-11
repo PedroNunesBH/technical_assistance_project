@@ -26,3 +26,9 @@ a {
     text-decoration: none;
     color: black;
 }
+
+.logout-btn {
+    background-color: grey;
+    border: 0px;
+    font-size: 1rem;
+}
