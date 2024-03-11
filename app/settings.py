@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from pathlib import Path
+from envinronment_variables import email, senha
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -134,3 +135,10 @@ LOGIN_URL = "login"
 LOGIN_REDIRECT_URL = "list_devices"  # Pagina de redirecionamento após o login
 
 LOGOUT_REDIRECT_URL = "login"  # Pagina de redirecionamento após o logout
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'  # servidor do email a ser utilizado
+EMAIL_PORT = 587  # porta do servidor
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = email  # endereco de email do remetente
+EMAIL_HOST_PASSWORD = senha  # senha do endereco de email do remetente
