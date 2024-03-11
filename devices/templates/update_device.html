@@ -2,6 +2,8 @@
 
 {% block content %}
     <main>
+        <h1>Editar Aparelho<br>ID : {{ object.id }} </h1>
+        <p>Data de Entrada : {{ object.entry_date }}</p>
         <form method="post">
             {% csrf_token %}
             {{ form.as_p }}

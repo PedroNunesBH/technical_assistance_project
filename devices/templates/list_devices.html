@@ -24,6 +24,7 @@
                 <th>Email do Cliente</th>
                 <th>Data de Entrada</th>
                 <th>Status</th>
+                <th>Preço</th>
                 <th>Técnico Responsável</th>
                 <th>Descrição do Problema</th>
                 <th>Ações</th>
@@ -40,6 +41,7 @@
                     <td>{{ device.client_email }}</td>
                     <td>{{ device.entry_date }}</td>
                     <td>{{ device.status }}</td>
+                    <td>{{ device.repair_price }}</td>
                     <td>{{ device.technician }}</td>
                     <td>{{ device.problem_description }}</td>
                     <td><a href="{% url 'update_device' device.pk %}" class="edit-btn">Editar</a></td>
