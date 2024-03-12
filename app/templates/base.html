@@ -21,6 +21,7 @@
             {% if user.is_staff %}
                 <li><a href="{% url 'list_technicals' %}">Ver Todos Funcionários</a></li>
                 <li><a href="{% url 'create_technicals' %}">Inserir Funcionário</a></li>
+                <li><a href="{% url 'technicals_statistics' %}">Estatistícas</a></li>
             {% endif %}
             {% if user.is_authenticated %}
             <li><form method="post" action="{% url 'logout' %}">

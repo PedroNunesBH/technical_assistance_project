@@ -1,12 +1,19 @@
 {% extends 'base.html' %}
 
+{% load static %}
+
+{% block styles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/create_devices.css' %}">
+{% endblock %}
+
 {% block content %}
     <main>
-        <h1>Registrar um Aparelho</h1>
-        <form method="post" action="">
+        <h1 class="form_title">Registrar um Aparelho</h1>
+        <form class="create_devices_form" method="post" action="">
         {% csrf_token %}
             {{ form.as_p }}
-            <button type="submit">Criar</button>
+            <button class="form_btn" type="submit">Criar</button>
         </form>
         </main>
 {% endblock %}

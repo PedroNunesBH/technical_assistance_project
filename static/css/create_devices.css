@@ -1,0 +1,13 @@
+.form_title, .create_devices_form {
+    margin-left: 500px;
+}
+
+.form_btn {
+    height: 30px;
+    width: 70px;
+    color: white;
+    background-color: green;
+    border: 2px solid green;
+    border-radius: 2px;
+    margin-left: 120px;
+}
