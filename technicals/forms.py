@@ -15,3 +15,4 @@ class CreateTechnicalsForm(ModelForm):
         self.fields["admission_date"].label = "Data de Admissão"
         self.fields["salary"].label = "Salário"
         self.fields["phone_number"].label = "Número de Telefone"
+        self.fields["employee_position"].label = "Cargo do Funcionário"
