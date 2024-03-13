@@ -20,6 +20,6 @@ class Devices(models.Model):
         auto_now_add=True
     )  # Adiciona automaticamente data e hora de entrada do aparelho
     status = models.CharField(choices=STATUS, max_length=50)
-    repair_price = models.CharField(default="Aguardando Orçamento", max_length=100)
+    repair_price = models.FloatField(default=0)
     technician = models.ForeignKey(Technicals, on_delete=models.PROTECT, related_name='devices_technicals')
     problem_description = models.TextField()
