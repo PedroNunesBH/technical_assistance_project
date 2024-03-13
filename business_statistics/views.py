@@ -10,11 +10,11 @@ class TechnicalsStatisticsView(TemplateView):
         context = super().get_context_data(**kwargs)
 
         devices_list = Devices.objects.all()
-        active_devices = 0  # quantidade de aparelhos na loja no momento(ativos)
         total_of_devices = 0
+        total_billing = 0  # faturamento total até o momento
         for device in devices_list:
-            if device.status != "Entregue ao Cliente":
-                active_devices += 1
+            if device.status != "Em Orçamento" and device.status != "Aguardando Aprovação":
+                total_billing += float(device.repair_price)
 
         technicals_list = Technicals.objects.all()  # Captura todos os tecnicos do model Technicals
         number_of_employees = 0
@@ -25,5 +25,5 @@ class TechnicalsStatisticsView(TemplateView):
 
         context["number_of_employees"] = number_of_employees
         context["total_wages"] = total_wages
-        context["active_devices"] = active_devices
+        context["total_billing"] = total_billing
         return context

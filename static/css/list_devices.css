@@ -21,3 +21,14 @@ td {
 th {
     background: grey;
 }
+
+.search_form input {
+    height: 30px;
+    width: 420px;
+    font-size: 1.1rem;
+}
+
+.search_form {
+    margin-left: 450px;
+    margin-bottom: 30px;
+}
