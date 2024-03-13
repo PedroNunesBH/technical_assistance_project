@@ -5,14 +5,16 @@
 
 .button-container {
     display: flex;
+    margin-top: 30px;
+    margin-left: 610px;
 }
 
 .delete-btn, .cancel-btn {
     font-size: 1.1rem;
     padding: 2px;
     border-radius: 3px;
-    display: inline-block;
     margin-right: 10px; /* Espaçamento entre os botões */
+    display: inline-block;
 }
 
 .delete-btn {

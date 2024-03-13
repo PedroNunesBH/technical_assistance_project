@@ -34,7 +34,7 @@
                     <td>{{ technical.cpf }}</td>
                     <td>{{ technical.email }}</td>
                     <td>{{ technical.admission_date }}</td>
-                    <td>{{ technical.salary }}</td>
+                    <td>R$ {{ technical.salary|floatformat:3 }}</td>
                     <td>{{ technical.phone_number }}</td>
                     <td><a href="{% url 'update_technical' technical.pk %}" class="edit-btn">Editar</a></td>
                     <td><a href="{% url 'delete_technical' technical.pk %}" class="delete-btn">Deletar</a></td>

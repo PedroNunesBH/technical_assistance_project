@@ -13,7 +13,9 @@
     <form method="post">
         {% csrf_token %}
         {{ form.as_p }}
-        <button class="delete-btn">Deletar</button>
-        <a href="{% url 'list_devices' %}" class="cancel-btn">Cancelar</a>
+        <div class="button-container">
+            <button class="delete-btn">Deletar</button>
+            <a href="{% url 'list_devices' %}" class="cancel-btn">Cancelar</a>
+        </div>
     </form>
 {% endblock %}

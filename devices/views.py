@@ -1,6 +1,7 @@
 from django.urls import reverse_lazy
 from django.views.generic import TemplateView, ListView, CreateView, UpdateView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.db.models import Q
 from .models import Devices
 from .forms import CreateDevicesForm
 
@@ -12,7 +13,7 @@ class ListDevicesView(LoginRequiredMixin, ListView):
     def get_queryset(self):
         queryset = super().get_queryset()
         search = self.request.GET.get('search', '')
-        queryset = queryset.filter(client_name__icontains=search)
+        queryset = queryset.filter(Q(client_name__icontains=search) | Q(model__icontains=search))
         return queryset
 
 

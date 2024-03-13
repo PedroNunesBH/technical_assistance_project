@@ -9,7 +9,7 @@ from .models import Devices
 def device_status_update(sender, instance, **kwargs):
     if instance.pk is not None:  # Verifica se não é a criação de um objeto
         device = Devices.objects.get(pk=instance.pk)  # Captura o objeto
-        if device.status != instance.status:
+        if device.status != instance.status:  # Verifica se o status sofreu alguma alteração
             subject = f'Atualização do Status do Seu Produto {instance.model}'  # Assunto do email
             message = (f'Olá {instance.client_name}.\n'
                        f'Estamos passando para informar que o status do seu produto {instance.model}'
