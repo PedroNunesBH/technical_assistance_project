@@ -19,6 +19,7 @@ class Devices(models.Model):
     entry_date = models.DateTimeField(
         auto_now_add=True
     )  # Adiciona automaticamente data e hora de entrada do aparelho
+    delivery_date = models.DateTimeField(blank=True,null=True)
     status = models.CharField(choices=STATUS, max_length=50)
     repair_price = models.FloatField(default=0)
     technician = models.ForeignKey(Technicals, on_delete=models.PROTECT, related_name='devices_technicals')

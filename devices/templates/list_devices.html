@@ -27,6 +27,7 @@
                 <th>Preço</th>
                 <th>Técnico Responsável</th>
                 <th>Descrição do Problema</th>
+                <th>Data de Saída</th>
                 <th>Ações</th>
                 <!-- Adicione mais colunas conforme necessário para os campos do seu modelo -->
             </tr>
@@ -44,6 +45,7 @@
                     <td>{{ device.repair_price }}</td>
                     <td>{{ device.technician }}</td>
                     <td>{{ device.problem_description }}</td>
+                    <td>{{ device.delivery_date }}</td>
                     <td><a href="{% url 'update_device' device.pk %}" class="edit-btn">Editar</a></td>
                     <td><a href="{% url 'delete_device' device.pk %}" class="delete-btn">Deletar</a></td>
 
