@@ -1,0 +1,31 @@
+.statistics_title {
+    margin-left: 500px;
+}
+
+.employees_statistics_div {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    margin-bottom: 80px;
+}
+
+.number_of_employees_div, .number_of_company_div {
+    width: 150px;
+    height: 60px;
+    padding: 3px;
+    display: inline-block;
+}
+
+.number_white {
+    color: white;
+    margin-left: 70px;
+    margin-top: 30px;
+}
+
+.number_of_employees_div {
+    background-color: green;
+}
+
+.number_of_company_div {
+    background-color: blue;
+}

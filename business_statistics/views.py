@@ -1,4 +1,5 @@
 from django.views.generic import TemplateView
+from django.db.models import Sum, Count
 from devices.models import Devices
 from technicals.models import Technicals
 
@@ -9,21 +10,37 @@ class TechnicalsStatisticsView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
 
-        devices_list = Devices.objects.all()
-        total_of_devices = 0
-        total_billing = 0  # faturamento total até o momento
-        for device in devices_list:
-            if device.status != "Em Orçamento" and device.status != "Aguardando Aprovação":
-                total_billing += float(device.repair_price)
+        # Consulta para calcular o faturamento total excluindo dispositivos em orçamento e aguardando aprovação
+        total_billing = Devices.objects.exclude(status__in=["Em Orçamento", "Aguardando Aprovação"]) \
+                                       .aggregate(total=Sum('repair_price'))['total'] or 0
 
-        technicals_list = Technicals.objects.all()  # Captura todos os tecnicos do model Technicals
-        number_of_employees = 0
-        total_wages = 0
-        for technical in technicals_list:  # percorre cada elemento da lista
-            number_of_employees += 1  # para cada tecnico adiciona 1 no numero de funcionarios
-            total_wages += technical.salary  # adiciona o salario de cada tecnico no total de salarios
+        repairs_number = Devices.objects.filter(status='Entregue').count()
 
+        # Consulta para calcular o número total de técnicos por posição
+        employees_by_position = Technicals.objects.values('employee_position') \
+                                                    .annotate(count=Count('id')) \
+                                                    .order_by('employee_position')
+        positions_totals = {}
+
+        for item in employees_by_position:
+            position = item['employee_position']
+            count = item['count']
+            positions_totals[position] = count
+
+        managers = positions_totals.get('Gerente', 0)  # Captura o valor da chave especificada ou retorna 0 se n houver
+        technicals = positions_totals.get('Técnico', 0)
+        attendants = positions_totals.get('Atendente', 0)
+
+        # Cálculo do número total de funcionários e total de salários
+        number_of_employees = sum(item['count'] for item in employees_by_position)
+        total_wages = sum(technical.salary for technical in Technicals.objects.all())
+
+        print(repairs_number)
         context["number_of_employees"] = number_of_employees
         context["total_wages"] = total_wages
         context["total_billing"] = total_billing
+        context["managers"] = managers
+        context["technicals"] = technicals
+        context["attendants"] = attendants
+        context["repairs_number"] = repairs_number
         return context

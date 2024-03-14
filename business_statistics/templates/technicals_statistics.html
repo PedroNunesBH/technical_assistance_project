@@ -1,12 +1,45 @@
 {% extends 'base.html' %}
 
+{% load static %}
+
+{% block styles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/technicals_statistics.css' %}">
+{% endblock %}
+
 {% block content %}
 
-    <main>
-        <h1>Estatisticas dos Funcionários</h1>
-        <p>O número total de funcionários ativos é : {{ number_of_employees }}</p>
-        <p>A folha de pagamento somada é : R$ {{ total_wages }}/mês</p>
-        <p>Faturamento Total: R${{ total_billing }}</p>
+    <main class="main_content">
+        <h1 class="statistics_title">Estatistícas Gerais</h1>
+        <h2>Estatisticas dos Funcionários</h2>
+
+        <div class="employees_statistics_div">
+            <div class="number_of_employees_div">
+                Total de Funcionários:<br><span class="number_white">{{ number_of_employees }}</span>
+            </div>
+            <div class="number_of_employees_div">
+                Total de Gerentes:<br><span class="number_white">{{ managers }}</span>
+            </div>
+            <div class="number_of_employees_div">
+                Total de Técnicos:<br><span class="number_white">{{ technicals }}</span>
+            </div>
+            <div class="number_of_employees_div">
+                Total de Atendentes:<br><span class="number_white">{{ attendants }}</span>
+            </div>
+        </div>
+
+        <h2>Estatisticas da Empresa</h2>
+        <div class="employees_statistics_div">
+            <div class="number_of_company_div">
+                Faturamento Total:<br><span class="number_white">R$ {{ total_billing|floatformat:2 }}</span>
+            </div>
+            <div class="number_of_company_div">
+                Número de Reparos:<br><span class="number_white">{{ repairs_number }}</span>
+            </div>
+            <div class="number_of_company_div">
+                Folha de Pagamento<br><span class="number_white"> R$ {{ total_wages|floatformat:3}}</span>
+            </div>
+        </div>
     </main>
 
 {% endblock %}
