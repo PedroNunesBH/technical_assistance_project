@@ -32,3 +32,10 @@ a {
     border: 0px;
     font-size: 1rem;
 }
+
+.username {
+    background-color: blue;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    color: white;
+}

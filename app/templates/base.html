@@ -12,6 +12,9 @@
 </head>
 <body>
     <header>
+        {% if user.is_authenticated %}
+            <p class="username">Usuário: {{ request.user }}</p>
+        {% endif %}
         <h1 class="h1-base">Assistência Técnica de Celulares</h1>
     </header>
     <nav>

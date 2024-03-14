@@ -6,7 +6,7 @@
     display: flex;
     gap: 40px;
     justify-content: center;
-    margin-bottom: 80px;
+    margin-bottom: 60px;
 }
 
 .number_of_employees_div, .number_of_company_div {
@@ -28,4 +28,8 @@
 
 .number_of_company_div {
     background-color: blue;
+}
+
+.statistics_subtitle {
+    margin-left: 500px;
 }
