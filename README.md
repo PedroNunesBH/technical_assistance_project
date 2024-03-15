@@ -15,10 +15,14 @@ Foco principal no backend do sistema.
     - Preço do Conserto
     - Técnico Responsável
     - Descrição do Problema
+
 2.**CRUD dos Funcionários**: Cadastro,visualização,edição e exclusão de funcionários da loja.(Apenas para usuários administradores)
+
 3.**Controle de Permissões**: O sistema contém o controle automático de permissões,estabelecendo as permissões e realizando as verificações para os usuários normais(funcionários) e para os administradores
 do sistema(donos/gerentes).
+
 4.**Sistema de Notificação ao Cliente**: O sistema atualiza o cliente automaticamente através do email fornecido pelo mesmo a cada atualização de status do aparelho.
+
 5.**Estatistícas Para Visualização**: Página dedicada para os usuários com permissão de administradores visualizarem algumas estatísticas básicas da loja:
     - Número Total de Funcionários
     - Número de Funcionários Por Posição(Atendente,Gerente ou Técnico)
