@@ -1,7 +1,29 @@
-h1 {
-    margin-left: 500px;
+.login_main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-form {
-    margin-left: 580px;
+.login_form {
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.login_form input {
+    width: 180px;
+    font-size: 1.2rem;
+    text-align: center;
+    display: inline-block;
+    margin: 0 auto;
+}
+
+.login_btn {
+    background-color: green;
+    color: white;
+    border: 3px solid green;
+    border-radius: 3px;
+    margin: 20px 140px;
+    height: 35px;
+    width: 70px;
 }

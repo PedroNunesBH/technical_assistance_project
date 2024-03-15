@@ -8,16 +8,17 @@
 {% endblock %}
 
 {% block content %}
-
-    {% if user.is_authenticated %}
-        <h1>Seja Bem Vindo(a) {{ request.user|capfirst }}</h1>
-    {% else %}
-    <h1>Seja Bem Vindo(a) ao Sistema<br>Para realizar o acesso faça seu login</h1>
-    <form method="post" action="{% url 'login' %}">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Login</button>
-  </form>
-    {% endif %}
+    <main class="login_main">
+        {% if user.is_authenticated %}
+            <h1 class="optional_h1">Seja Bem Vindo(a) {{ request.user|capfirst }}</h1>
+        {% else %}
+            <h1>Seja Bem Vindo(a) ao Sistema<br>Para realizar o acesso faça seu login</h1>
+            <form class="login_form" method="post" action="{% url 'login' %}">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button class="login_btn" type="submit">Login</button>
+          </form>
+        {% endif %}
+    </main>
 
 {% endblock %}

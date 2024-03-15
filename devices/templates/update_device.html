@@ -1,13 +1,20 @@
 {% extends 'base.html' %}
 
+{% load static %}
+
+{% block styles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/update_devices.css' %}">
+{% endblock %}
+
 {% block content %}
-    <main>
-        <h1>Editar Aparelho<br>ID : {{ object.id }} </h1>
+    <main class="update_main">
+        <h1 class="update_title">Editar Aparelho {{ object.model }} | ID: {{ object.pk }}  </h1>
         <p>Data de Entrada : {{ object.entry_date }}</p>
-        <form method="post">
+        <form class="update_form" method="post">
             {% csrf_token %}
             {{ form.as_p }}
-            <button type="submit">Atualizar</button>
+            <button class="update_btn" type="submit">Atualizar</button>
         </form>
     </main>
 {% endblock %}

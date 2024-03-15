@@ -17,3 +17,4 @@ class CreateDevicesForm(forms.ModelForm):
         self.fields["repair_price"].label = "Preço do Conserto"
         self.fields["technician"].label = "Técnico Responsável"
         self.fields["problem_description"].label = "Descrição do Problema"
+        self.fields["delivery_date"].label = "Data de Entrega"
