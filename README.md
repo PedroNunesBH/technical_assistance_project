@@ -1,6 +1,10 @@
 # Sistema Web Interno de Assistência Técnica de Celulares 
 
-Este é um projeto desenvolvido utilizando Django, um framework web em Python, para fornecer controle interno a uma assistência técnica de aparelhos celulares. Este README fornece uma visão geral das funcionalidades do sistema e instruções para configuração e execução.
+Este é um projeto desenvolvido utilizando Django, um framework web em Python, para fornecer controle interno a uma assistência técnica de aparelhos celulares.
+
+Este README fornece uma visão geral das funcionalidades do sistema e instruções para configuração e execução.
+
+O projeto foi concebido como um meio para desenvolver e aprimorar habilidades no desenvolvimento web nas tecnologias utilizadas e principalmente, Django.
 
 # Funcionalidades
 
@@ -29,6 +33,8 @@ do sistema(donos/gerentes).
     - Número de Reparos Totais Realizados pela Loja
     - Valor da Folha de Pagamento dos Funcionários
 
+6.**Cadastro de Usuários**: Por se tratar de um sistema interno,os usuários devem ser criados através de um usuário administradro no painel do mesmo indicado abaixo na parte de URL's.
+    
 # Tecnologias Utilizadas
 
     -Django
@@ -48,6 +54,14 @@ Para instalar todas as dependências necessárias para o funcionamento correto d
 
 **pip install -r requirements.txt**
 
+## Criando um Super Usuário(Administrador)
+
+Para configurar um administrador no Django,no terminal,utilize o seguinte comando:
+
+**python manage.py createsuperuser**
+
+Após isso siga os passos descritos no terminal para configurar o mesmo.
+
 ## Configuração do Banco de Dados 
 
 Para configurar o banco de dados do projeto são necessários dois comandos na seguinte ordem:
@@ -62,3 +76,31 @@ Para iniciar o servidor de desenvolvimento do Django em sua máquina utilize o s
 
 **python manage.py runserver**
 
+Após o comando runserver(acima) o servidor de desenvolvimento pode ser acessado através de : http://127.0.0.1:8000/
+
+## URL's
+
+**OBS: Para o acesso das URL's,os passos anteriores descritos devem ser seguidos corretamente.**
+
+**http://127.0.0.1:8000/**
+    Página inicial.Formulário para preenchimento do usuário e senha para realizar o login no sistema.
+    Após o login bem sucedido o usuário é redirecionado para a URL /list_devices.
+    
+**http://127.0.0.1:8000/admin**
+    Painel do administrador nativo do framework Django.
+    Para ter acesso basta realizar o login.
+    
+**http://127.0.0.1:8000/list_devices**
+    URL responsável pela listagem de todos os aparelhos cadastrados na loja através de uma tabela exibindo os detalhes de cada um e os botões para edição e exclusão dos respectivos aparelhos.
+
+**http://127.0.0.1:8000/create_devices/** 
+    URL responsável pelo cadastro de um aparelho através de um formulário.
+
+**http://127.0.0.1:8000/list_technicals/**
+    URL responsável pela listagem de todos os funcionários cadastrados da mesma forma da listagem de aparelhos.
+
+**http://127.0.0.1:8000/create_technicals/**
+    URL responsável pelo cadastro de um funcionário através de um formulário.
+
+**http://127.0.0.1:8000/technicals_statistics/**
+    URL responsável pela exibição das estatísticas descritas nas funcionalidades.
