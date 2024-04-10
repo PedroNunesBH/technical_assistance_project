@@ -1,0 +1,13 @@
+.form-title, .create-review-form {
+    margin-left: 500px;
+}
+
+.btn-review-form {
+    color: white;
+    background: green;
+    border: 2px solid green;
+    border-radius: 4px;
+    width: 50px;
+    height: 30px;
+    margin-left: 200px;
+}

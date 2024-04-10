@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block styles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/create_review.css' %}">
+{% endblock %}
+
+{% block content %}
+    <main>
+        <h1 class="form-title">Deixe Sua Avaliação</h1>
+        <form class="create-review-form" method="post" action="">
+            {% csrf_token %}
+                {{ form.as_p }}
+                <button class="btn-review-form" type="submit">Enviar</button>
+        </form>
+    </main>
+{% endblock %}
