@@ -33,7 +33,7 @@ do sistema(donos/gerentes).
     - Número de Reparos Totais Realizados pela Loja
     - Valor da Folha de Pagamento dos Funcionários
 
-6.**Cadastro de Usuários**: Por se tratar de um sistema interno,os usuários devem ser criados através de um usuário administradro no painel do mesmo indicado abaixo na parte de URL's.
+6.**Cadastro de Usuários**: Por se tratar de um sistema interno,os usuários devem ser criados através de um usuário administrador no painel do mesmo indicado abaixo na parte de URL's.
     
 # Tecnologias Utilizadas
 
@@ -50,7 +50,7 @@ Certifique-se de ter os seguintes pré-requisitos instalados em sua máquina:
 
 ## Instalação das Dependências do Projeto
 
-Para instalar todas as dependências necessárias para o funcionamento correto do projeto(especificadas no requirements.txt) utilize o comando:
+Para instalar todas as dependências necessárias para o funcionamento correto do projeto(especificadas no requirements.txt), utilize o comando:
 
 **pip install -r requirements.txt**
 
