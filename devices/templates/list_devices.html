@@ -29,7 +29,6 @@
                 <th>Descrição do Problema</th>
                 <th>Data de Saída</th>
                 <th>Ações</th>
-                <!-- Adicione mais colunas conforme necessário para os campos do seu modelo -->
             </tr>
         </thead>
         <tbody>
@@ -48,8 +47,6 @@
                     <td>{{ device.delivery_date }}</td>
                     <td><a href="{% url 'update_device' device.pk %}" class="edit-btn">Editar</a></td>
                     <td><a href="{% url 'delete_device' device.pk %}" class="delete-btn">Deletar</a></td>
-
-                    <!-- Adicione mais colunas conforme necessário para os campos do seu modelo -->
                 </tr>
             {% endfor %}
         </tbody>
