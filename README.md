@@ -70,6 +70,16 @@ Para configurar o banco de dados do projeto são necessários dois comandos na s
 
 **2 - python manage.py migrate**
 
+## Configuração de variáveis no arquivo app/settings.py 
+
+No arquivo de configurações gerais do projeto (settings.py) devem ser substituídas as seguintes variáveis : 
+
+EMAIL_HOST_USER = email  # O endereço deve ser o endereço de e-mail do remetente
+
+EMAIL_HOST_PASSWORD = senha  # A senha deve ser a senha do e-mail do remetente
+
+** É sempre recomendado criar um arquivo de variáveis de ambiente para colocar dados sensíveis e importar para o settings.py a/as váriaveis.
+
 ## Rodando o Servidor Local
 
 Para iniciar o servidor de desenvolvimento do Django em sua máquina utilize o seguinte comando:
