@@ -15,6 +15,12 @@
         {% if user.is_authenticated %}
             <p class="username">Usuário: {{ request.user }}</p>
         {% endif %}
+        {% if user.is_authenticated %}
+            <form class="logout_form" method="post" action="{% url 'logout' %}">
+                {% csrf_token %}
+                <button type="submit" class="logout-btn">Sair</button>
+            </form>
+        {% endif %}
         <h1 class="h1-base">Assistência Técnica de Celulares</h1>
     </header>
     <nav>
@@ -28,12 +34,6 @@
                 <li><a href="{% url 'list_technicals' %}">Ver Todos Funcionários</a></li>
                 <li><a href="{% url 'create_technicals' %}">Inserir Funcionário</a></li>
                 <li><a href="{% url 'technicals_statistics' %}">Estatistícas</a></li>
-            {% endif %}
-            {% if user.is_authenticated %}
-                <li><form method="post" action="{% url 'logout' %}">
-                    {% csrf_token %}
-                    <button type="submit" class="logout-btn">Logout</button>
-                </form></li>
             {% endif %}
         </ul>
 

@@ -10,34 +10,41 @@
 {% block content %}
 
     <main class="main_content">
-        <h1 class="statistics_title">Estatistícas Gerais</h1>
-        <h2 class="statistics_subtitle">Estatisticas dos Funcionários</h2>
+        <h1 class="statistics_title">Estatísticas Gerais</h1>
+        <h2 class="statistics_subtitle">Estatísticas dos Funcionários</h2>
 
         <div class="employees_statistics_div">
             <div class="number_of_employees_div">
-                Total de Funcionários:<br><span class="number_white">{{ number_of_employees }}</span>
+                <p>Total de Funcionários:</p>
+                <span class="number_white">{{ number_of_employees }}</span>
             </div>
             <div class="number_of_employees_div">
-                Total de Gerentes:<br><span class="number_white">{{ managers }}</span>
+                <p>Total de Gerentes:</p>
+                <span class="number_white">{{ managers }}</span>
             </div>
             <div class="number_of_employees_div">
-                Total de Técnicos:<br><span class="number_white">{{ technicals }}</span>
+                <p>Total de Técnicos:</p>
+                <span class="number_white">{{ technicals }}</span>
             </div>
             <div class="number_of_employees_div">
-                Total de Atendentes:<br><span class="number_white">{{ attendants }}</span>
+                <p>Total de Atendentes:</p>
+                <span class="number_white">{{ attendants }}</span>
             </div>
         </div>
 
-        <h2 class="statistics_subtitle">Estatisticas da Empresa</h2>
+        <h2 class="statistics_subtitle">Estatísticas da Empresa</h2>
         <div class="employees_statistics_div">
             <div class="number_of_company_div">
-                Faturamento Total:<br><span class="number_white">R$ {{ total_billing|floatformat:2 }}</span>
+                <p>Faturamento Total:</p>
+                <span class="number_white_div">R$ {{ total_billing|floatformat:2 }}</span>
             </div>
             <div class="number_of_company_div">
-                Número de Reparos:<br><span class="number_white">{{ repairs_number }}</span>
+                <p>Número de Reparos:</p>
+                <span class="number_white_div_repair">{{ repairs_number }}</span>
             </div>
             <div class="number_of_company_div">
-                Folha de Pagamento<br><span class="number_white"> R$ {{ total_wages|floatformat:3}}</span>
+                <p>Folha de Pagamento:</p>
+                <span class="number_white_div">R$ {{ total_wages|floatformat:3}}</span>
             </div>
         </div>
     </main>

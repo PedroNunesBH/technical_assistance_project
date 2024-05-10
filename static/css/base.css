@@ -28,14 +28,14 @@ a {
 }
 
 .logout-btn {
-    background-color: grey;
+    background-color: red;
     border: 0px;
     font-size: 1rem;
+    color: white;
 }
 
-.username {
+.username, .logout_form {
     background-color: blue;
-    margin-top: 0px;
-    margin-bottom: 0px;
     color: white;
+    margin: 0px 0px;
 }

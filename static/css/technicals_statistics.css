@@ -11,12 +11,12 @@
 
 .number_of_employees_div, .number_of_company_div {
     width: 150px;
-    height: 60px;
+    height: 90px;
     padding: 3px;
     display: inline-block;
 }
 
-.number_white {
+.number_white, .number_white_div_repair {
     color: white;
     margin-left: 70px;
     margin-top: 30px;
@@ -32,4 +32,9 @@
 
 .statistics_subtitle {
     margin-left: 500px;
+}
+
+.number_white_div {
+    color: white;
+    margin-left: 30px;
 }
