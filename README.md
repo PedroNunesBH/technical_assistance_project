@@ -75,6 +75,7 @@ Para configurar o banco de dados do projeto são necessários dois comandos na s
 No arquivo de configurações gerais do projeto (settings.py) devem ser substituídas as seguintes variáveis : 
 
 EMAIL_HOST_USER = email  # O endereço deve ser o endereço de e-mail do remetente
+
 EMAIL_HOST_PASSWORD = senha  # A senha deve ser a senha do e-mail do remetente
 
 ** É sempre recomendado criar um arquivo de variáveis de ambiente para colocar dados sensíveis e importar para o settings.py a/as váriaveis.
